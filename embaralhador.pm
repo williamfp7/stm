@@ -1,13 +1,12 @@
 #!/usr/bin/perl
 # Created on: 21/06/2011
-#Shuffe de amionï¿½cidos
-package Shuffle;
+#Embaralhador de amionácidos
+package embaralhador;
 use warnings;
 use strict;
 use AMP;
-use HydrophobicMoment;
 
-sub verify{
+sub verificar{
 	my($number,@sorteados)=@_;
 	for(my $i=0;$i<@sorteados;$i++){
 		if($number==$sorteados[$i]){
@@ -23,7 +22,7 @@ sub shuffle{
 	my $shuffle="";
 	for(my $i=0;$i<length $seq;$i++){
 		my $valor=int rand length $seq;
-		if(verify($valor, @tset)==0){
+		if(verificar($valor, @tset)==0){
 			$tset[$i]=$valor;
 			$shuffle.=substr($seq,$valor,1);
 		}else{

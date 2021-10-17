@@ -3,7 +3,7 @@ use warnings;
 use strict;
 use lib './';
 use HydrophobicMoment;
-use Shuffle;
+use Shuffe;
 
 for(my $w=0;$w<5;$w++){
 	unless(open(FILE,"helixnr70curated.fas")){
@@ -19,7 +19,7 @@ for(my $w=0;$w<5;$w++){
 		chomp $line;
 		if($line!~/>/){
 			for(my $i=0;$i<100;$i++){
-				printf OUT "%.3f;",Shuffle::averageHM($line,10**$w);
+				printf OUT "%.3f;",Shuffe::averageHM($line,10**$w);
 			}
 			print OUT "\n";
 		}
